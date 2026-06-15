@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Umer Sajid — Data Scientist portfolio: ML, analytics, visualization, and deployed AI apps.">
+  <title>Umer Sajid | Data Scientist Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #0ea5e9;
+      --shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+      --radius: 1.25rem;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+      scroll-margin-top: 88px;
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 640px;
+      font-size: 1.05rem;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0.9rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+    }
+
+    .logo span { color: var(--primary); }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #334155;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.72rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--primary);
+      border: 1.5px solid #bfdbfe;
+    }
+
+    .btn-outline:hover { background: #eff6ff; }
+
+    .hero {
+      padding: 4.5rem 0 3rem;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #2563eb, #0ea5e9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 520px;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-card span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .hero-visual {
+      background: linear-gradient(145deg, #1e3a8a, #2563eb 45%, #0ea5e9);
+      border-radius: 1.75rem;
+      padding: 2.5rem;
+      color: white;
+      box-shadow: var(--shadow);
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-visual .initials {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      border: 2px solid rgba(255,255,255,0.25);
+    }
+
+    .hero-visual p {
+      opacity: 0.92;
+      font-size: 0.95rem;
+      max-width: 260px;
+    }
+
+    .skills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-tag {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    .about-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.92rem;
+      color: #334155;
+    }
+
+    .about-meta i { color: var(--primary); margin-right: 0.4rem; }
+
+    .project-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .project-card.hidden { display: none; }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+    }
+
+    .project-top {
+      padding: 1.25rem 1.35rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .project-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #eff6ff;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .project-category {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    .project-body {
+      padding: 1rem 1.35rem 1.35rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0.75rem 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .project-highlights {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .project-highlights li {
+      font-size: 0.82rem;
+      color: #334155;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-highlights li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .tech-stack span {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      padding: 0.18rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+    }
+
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .link-pill:hover { opacity: 0.85; }
+
+    .link-github { background: #0f172a; color: white; }
+    .link-streamlit { background: #ff4b4b; color: white; }
+    .link-gradio { background: #f97316; color: white; }
+    .link-kaggle { background: #20beff; color: #0f172a; }
+    .link-demo { background: #eff6ff; color: var(--primary); border: 1px solid #bfdbfe; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-group {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .skill-group h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-group h3 i { color: var(--primary); }
+
+    .contact-flex {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 1.5rem;
+    }
+
+    .contact-info,
+    .contact-form {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item i {
+      width: 2rem;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .contact-item a {
+      color: #334155;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .contact-item a:hover { color: var(--primary); }
+
+    .form-group { margin-bottom: 0.9rem; }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 0.85rem;
+      border: 1px solid #cbd5e1;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .social-icons a {
+      color: #64748b;
+      font-size: 1.4rem;
+      transition: color 0.2s;
+    }
+
+    .social-icons a:hover { color: var(--primary); }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 240px; }
+      .contact-flex { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 0; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo"><span>US</span> · Data Science</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge"><i class="fas fa-chart-line"></i> Data Scientist · ML Engineer</div>
+          <h1>Hi, I'm Umer Sajid<br><em>Turning data into decisions</em></h1>
+          <p class="hero-desc">I build end-to-end data science solutions — from exploratory analytics and BI dashboards to production ML, RAG systems, and deployed Streamlit & Gradio apps.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary"><i class="fas fa-layer-group"></i> View Projects</a>
+            <a href="https://github.com/UmerSajid842" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.kaggle.com/umersajid842" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-kaggle"></i> Kaggle</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card"><strong>15+</strong><span>Projects</span></div>
+            <div class="stat-card"><strong>7</strong><span>Live Demos</span></div>
+            <div class="stat-card"><strong>MS</strong><span>Data Science</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="initials">US</div>
+          <p>Machine Learning · Analytics · Visualization · GenAI · Computer Vision</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About me</h2>
+          <p class="section-subtitle">Software engineering background with a focus on practical, deployable data science.</p>
+        </div>
+        <div class="about-card">
+          <p class="about-text">I'm an MS Data Science graduate passionate about machine learning, data analytics, Power BI, and intelligent systems. I enjoy taking projects from raw data and notebooks to interactive dashboards and live demos on GitHub, Kaggle, Streamlit, and Hugging Face.</p>
+          <p class="about-text">My work spans financial analytics, healthcare ML, computer vision, NLP/RAG, and time-series forecasting — always with clear evaluation metrics and professional documentation.</p>
+          <div class="about-meta">
+            <div><i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan · Remote</div>
+            <div><i class="fas fa-graduation-cap"></i> Pak-Austria Fachhochschule</div>
+            <div><i class="fas fa-rocket"></i> Open to data science roles</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" style="background: #eef2ff33;">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured projects</h2>
+          <p class="section-subtitle">A curated selection from my GitHub — analytics, ML, visualization, and deployed apps with live demo links where available.</p>
+        </div>
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning</button>
+          <button class="filter-btn" data-filter="analytics">Analytics & BI</button>
+          <button class="filter-btn" data-filter="nlp">NLP / GenAI</button>
+          <button class="filter-btn" data-filter="viz">Visualization</button>
+          <button class="filter-btn" data-filter="cv">Computer Vision</button>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Technical skills</h2>
+          <p class="section-subtitle">Tools and frameworks I use across the full data science lifecycle.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3><i class="fas fa-code"></i> Languages & Data</h3>
+            <div class="skills-cloud">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">MongoDB</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3><i class="fas fa-brain"></i> ML & Deep Learning</h3>
+            <div class="skills-cloud">
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Transformers</span>
+              <span class="skill-tag">LangChain</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3><i class="fas fa-chart-pie"></i> Visualization & BI</h3>
+            <div class="skills-cloud">
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Matplotlib</span>
+              <span class="skill-tag">Seaborn</span>
+              <span class="skill-tag">Plotly</span>
+              <span class="skill-tag">Streamlit</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3><i class="fas fa-cloud"></i> Deployment</h3>
+            <div class="skills-cloud">
+              <span class="skill-tag">Gradio</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Hugging Face</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Git/GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="background: #f8fafc;">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Let's connect</h2>
+          <p class="section-subtitle">Open to collaborations, freelance work, and full-time data science opportunities.</p>
+        </div>
+        <div class="contact-flex">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/umer-s-7b9806210" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/UmerSajid842" target="_blank" rel="noopener">github.com/UmerSajid842</a>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-kaggle"></i>
+              <a href="https://www.kaggle.com/umersajid842" target="_blank" rel="noopener">kaggle.com/umersajid842</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-robot"></i>
+              <a href="https://huggingface.co/UmerSajid" target="_blank" rel="noopener">huggingface.co/UmerSajid</a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form id="demo-contact-form">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Full name *" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Email address *" required>
+              </div>
+              <div class="form-group">
+                <textarea rows="4" placeholder="Tell me about your project or inquiry..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send message</button>
+              <p style="font-size: 0.75rem; margin-top: 1rem; color: #64748b;">Demo form — reach out on LinkedIn for real inquiries.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/UmerSajid842" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/umer-s-7b9806210" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.kaggle.com/umersajid842" target="_blank" rel="noopener" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+      <a href="https://huggingface.co/UmerSajid" target="_blank" rel="noopener" aria-label="Hugging Face"><i class="fas fa-robot"></i></a>
+    </div>
+    <p style="color: #64748b; font-size: 0.9rem;">© 2026 Umer Sajid · Data Scientist Portfolio</p>
+  </footer>
+
+  <script>
+    const projects = [
+      {
+        title: "RAG Question Answering System",
+        category: "nlp ml",
+        catLabel: "GenAI",
+        icon: "fa-comments",
+        desc: "Production-ready RAG pipeline for intelligent Q&A over PDF documents using semantic search and dual LLM support (local HuggingFace + OpenAI).",
+        highlights: ["PDF chunking & ChromaDB vector store", "Gradio web UI + FastAPI REST endpoints", "2–3s response time after indexing"],
+        tech: ["LangChain", "ChromaDB", "Gradio", "FastAPI", "Transformers"],
+        links: {
+          github: "https://github.com/UmerSajid842/rag-qa-system",
+          gradio: "https://github.com/UmerSajid842/rag-qa-system#-quick-start"
+        }
+      },
+      {
+        title: "Cryptocurrency Market Analysis",
+        category: "analytics ml viz",
+        catLabel: "Analytics & BI",
+        icon: "fa-coins",
+        desc: "Interactive Power BI dashboard with live CoinGecko data and Python ML forecasting for top-100 crypto market trends and Bitcoin price projection.",
+        highlights: ["Real-time market KPIs & category filters", "Linear regression Bitcoin forecast", "Descriptive + predictive analytics combined"],
+        tech: ["Power BI", "Python", "Scikit-learn", "CoinGecko API"],
+        links: {
+          github: "https://github.com/UmerSajid842/cryptocurrency-market-analysis"
+        }
+      },
+      {
+        title: "Space Weather Forecasting (XAI)",
+        category: "ml analytics viz",
+        catLabel: "Time Series",
+        icon: "fa-satellite",
+        desc: "AI-powered space weather system analyzing NASA/NOAA data with forecasting, anomaly detection, and SHAP explainability in an interactive Streamlit dashboard.",
+        highlights: ["ARIMA + LSTM forecasting comparison", "Isolation Forest anomaly detection", "SHAP feature importance analysis"],
+        tech: ["Streamlit", "LSTM", "SHAP", "Plotly", "Scikit-learn"],
+        links: {
+          github: "https://github.com/UmerSajid842/Space_Weather_Project",
+          streamlit: "https://github.com/UmerSajid842/Space_Weather_Project#-run-streamlit-dashboard"
+        }
+      },
+      {
+        title: "Reddit Network Dashboard",
+        category: "nlp viz analytics",
+        catLabel: "NLP & Networks",
+        icon: "fa-reddit-alien",
+        desc: "Streamlit dashboard for Reddit hyperlink network analysis with sentiment scoring, temporal trends, and interactive graph exploration.",
+        highlights: ["NetworkX graph analytics", "Sentiment & temporal analysis", "Interactive filtering and visuals"],
+        tech: ["Streamlit", "NetworkX", "NLP", "Pandas"],
+        links: {
+          github: "https://github.com/UmerSajid842/reddit-network-dashboard",
+          streamlit: "https://github.com/UmerSajid842/reddit-network-dashboard"
+        }
+      },
+      {
+        title: "NYC Taxi Data Pipeline",
+        category: "analytics viz",
+        catLabel: "Data Engineering",
+        icon: "fa-taxi",
+        desc: "End-to-end pipeline for NYC taxi trip data — ingestion, cleaning, aggregation, and Streamlit visualization for trip patterns and insights.",
+        highlights: ["Full ETL workflow with Pandas", "Trip pattern & revenue analysis", "Interactive Streamlit frontend"],
+        tech: ["Python", "Pandas", "Streamlit", "Data Viz"],
+        links: {
+          github: "https://github.com/UmerSajid842/Nyc_Taxi",
+          streamlit: "https://github.com/UmerSajid842/Nyc_Taxi"
+        }
+      },
+      {
+        title: "S&P 500 Exploratory Analysis",
+        category: "analytics viz",
+        catLabel: "Financial EDA",
+        icon: "fa-chart-area",
+        desc: "Comprehensive EDA of S&P 500 index data (2015–2025) uncovering volatility, correlations, seasonality, and COVID-19 market crash patterns.",
+        highlights: ["10-year trend & volatility analysis", "Seasonality in monthly returns", "Correlation heatmaps & outlier detection"],
+        tech: ["Pandas", "Matplotlib", "Seaborn", "Yahoo Finance"],
+        links: {
+          github: "https://github.com/UmerSajid842/S-P-500-Index-data",
+          kaggle: "https://www.kaggle.com/umersajid842"
+        }
+      },
+      {
+        title: "Heart Disease Prediction",
+        category: "ml analytics",
+        catLabel: "Healthcare ML",
+        icon: "fa-heartbeat",
+        desc: "Comparative ML study on UCI heart disease data with Logistic Regression achieving 90% accuracy, ROC-AUC 0.95, plus a Gradio prediction interface.",
+        highlights: ["6 models compared with full metrics", "Logistic Regression best performer", "Gradio web app for real-time screening"],
+        tech: ["Scikit-learn", "Gradio", "ROC/AUC", "UCI Dataset"],
+        links: {
+          github: "https://github.com/UmerSajid842/Heart-Disease-Prediction",
+          kaggle: "https://www.kaggle.com/umersajid842"
+        }
+      },
+      {
+        title: "Chest X-Ray Pneumonia Detector",
+        category: "cv ml",
+        catLabel: "Medical CV",
+        icon: "fa-x-ray",
+        desc: "Deep learning classifier for pneumonia detection from chest X-ray images, deployed as a live Gradio app on Hugging Face Spaces.",
+        highlights: ["CNN-based image classification", "Live demo on Hugging Face", "Healthcare diagnostic use case"],
+        tech: ["TensorFlow", "Gradio", "Computer Vision", "Hugging Face"],
+        links: {
+          gradio: "https://huggingface.co/spaces/UmerSajid/Chest_X_Ray_Pneumonia_Detector"
+        }
+      },
+      {
+        title: "YOLOv8 Object Detection",
+        category: "cv ml",
+        catLabel: "Computer Vision",
+        icon: "fa-camera",
+        desc: "Real-time object detection powered by YOLOv8 with OpenCV processing and a Gradio interface deployed on Hugging Face Spaces.",
+        highlights: ["Upload image → instant bounding boxes", "YOLOv8 + OpenCV pipeline", "Public Gradio demo"],
+        tech: ["YOLOv8", "OpenCV", "Gradio", "Ultralytics"],
+        links: {
+          gradio: "https://huggingface.co/spaces/UmerSajid/Object_Detection"
+        }
+      },
+      {
+        title: "Industrial Defect Detection",
+        category: "cv ml",
+        catLabel: "Deep Learning",
+        icon: "fa-industry",
+        desc: "Research-grade defect detection under extreme class imbalance using MSHA-Net with Focal Loss, Grad-CAM interpretability, and ConvNeXt benchmarking.",
+        highlights: ["Macro F1 & balanced accuracy metrics", "Grad-CAM heatmap visualization", "ConvNeXt SOTA benchmark (F1: 0.994)"],
+        tech: ["PyTorch", "Focal Loss", "Grad-CAM", "ConvNeXt"],
+        links: {
+          github: "https://github.com/UmerSajid842/Defect-detection-in-industrial-images"
+        }
+      },
+      {
+        title: "DNA Sequence Classification (GENA-LM)",
+        category: "nlp ml",
+        catLabel: "Bioinformatics",
+        icon: "fa-dna",
+        desc: "Fine-tuned pretrained GENA-LM transformer for DNA sequence classification — transfer learning from NLP to genomics on Kaggle.",
+        highlights: ["78% accuracy vs 50% baseline", "Hugging Face Trainer API", "Developed on Kaggle Notebooks"],
+        tech: ["Transformers", "GENA-LM", "Hugging Face", "Kaggle"],
+        links: {
+          github: "https://github.com/UmerSajid842/DNA-Sequence-Classification-Using-Pretrained-DNA-Language-Models-GENA-LM-",
+          kaggle: "https://www.kaggle.com/umersajid842"
+        }
+      },
+      {
+        title: "Pet Image Segmentation (U-Net)",
+        category: "cv ml",
+        catLabel: "Segmentation",
+        icon: "fa-paw",
+        desc: "Modified U-Net with MobileNetV2 encoder for pixel-level pet segmentation on the Oxford-IIIT Pet Dataset with class-imbalance handling.",
+        highlights: ["~95% training / ~90% validation accuracy", "MobileNetV2 pretrained encoder", "Sample-weighted loss for imbalance"],
+        tech: ["TensorFlow", "U-Net", "MobileNetV2", "Keras"],
+        links: {
+          github: "https://github.com/UmerSajid842/image-segmentation"
+        }
+      },
+      {
+        title: "MNIST Digit Classification (KNN)",
+        category: "ml",
+        catLabel: "Classical ML",
+        icon: "fa-sort-numeric-up",
+        desc: "Systematic KNN evaluation on MNIST comparing Euclidean, Manhattan, and Chebyshev metrics across K=1–10 with confusion matrix analysis.",
+        highlights: ["97.2% accuracy with Euclidean K=1", "3 distance metrics compared", "Full confusion matrix analysis"],
+        tech: ["Scikit-learn", "MNIST", "KNN", "Matplotlib"],
+        links: {
+          github: "https://github.com/UmerSajid842/MNIST-DATASET",
+          kaggle: "https://www.kaggle.com/umersajid842"
+        }
+      },
+      {
+        title: "Iris Classification (Naive Bayes)",
+        category: "ml analytics",
+        catLabel: "Probabilistic ML",
+        icon: "fa-seedling",
+        desc: "Comparative study of four Naive Bayes variants on the Iris dataset using train-test split and 10-fold cross-validation.",
+        highlights: ["GaussianNB: 96.7% test accuracy", "10-fold CV validation", "EDA with scatter matrix & box plots"],
+        tech: ["Scikit-learn", "Pandas", "Matplotlib", "Cross-Validation"],
+        links: {
+          github: "https://github.com/UmerSajid842/Irisdataset",
+          kaggle: "https://www.kaggle.com/umersajid842"
+        }
+      },
+      {
+        title: "AI IT Troubleshooting Assistant",
+        category: "nlp ml",
+        catLabel: "GenAI App",
+        icon: "fa-headset",
+        desc: "Generative AI assistant for IT troubleshooting — guides users through common technical issues with an interactive Gradio interface on Hugging Face.",
+        highlights: ["LLM-powered troubleshooting flows", "Deployed on Hugging Face Spaces", "Practical GenAI application"],
+        tech: ["Gradio", "LLM", "Hugging Face", "Python"],
+        links: {
+          gradio: "https://huggingface.co/spaces/UmerSajid/AI_Powered_IT_Troubleshooting_Assistant"
+        }
+      }
+    ];
+
+    function renderLink(type, url) {
+      const labels = {
+        github: ['fab fa-github', 'GitHub', 'link-github'],
+        streamlit: ['fas fa-play', 'Streamlit', 'link-streamlit'],
+        gradio: ['fas fa-bolt', 'Live Demo', 'link-gradio'],
+        kaggle: ['fab fa-kaggle', 'Kaggle', 'link-kaggle']
+      };
+      const [icon, label, cls] = labels[type];
+      return `<a href="${url}" target="_blank" rel="noopener" class="link-pill ${cls}"><i class="${icon}"></i> ${label}</a>`;
+    }
+
+    function renderProjects(filter = 'all') {
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = projects
+        .filter(p => filter === 'all' || p.category.split(' ').includes(filter))
+        .map(p => {
+          const links = Object.entries(p.links || {})
+            .map(([type, url]) => renderLink(type, url))
+            .join('');
+          const highlights = p.highlights.map(h => `<li>${h}</li>`).join('');
+          const tech = p.tech.map(t => `<span>${t}</span>`).join('');
+          return `
+            <article class="project-card" data-category="${p.category}">
+              <div class="project-top">
+                <div class="project-icon"><i class="fas ${p.icon}"></i></div>
+                <span class="project-category">${p.catLabel}</span>
+              </div>
+              <div class="project-body">
+                <h3>${p.title}</h3>
+                <p class="project-desc">${p.desc}</p>
+                <ul class="project-highlights">${highlights}</ul>
+                <div class="tech-stack">${tech}</div>
+                <div class="project-links">${links}</div>
+              </div>
+            </article>`;
+        }).join('');
+    }
+
+    renderProjects();
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderProjects(btn.dataset.filter);
+      });
+    });
+
+    document.getElementById('demo-contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if (!name || !email) {
+        alert('Please fill in your name and email.');
+        return;
+      }
+      alert(`Thanks ${name}! Connect on LinkedIn for a real conversation.`);
+      e.target.reset();
+    });
+
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        if (window.scrollY + 120 >= section.offsetTop && window.scrollY + 120 < section.offsetTop + section.clientHeight) {
+          current = section.id;
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    });
+  </script>
+</body>
+</html>
