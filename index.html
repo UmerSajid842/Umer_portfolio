@@ -764,12 +764,36 @@
         category: "nlp ml",
         catLabel: "GenAI",
         icon: "fa-comments",
-        desc: "Production-ready RAG pipeline for intelligent Q&A over PDF documents using semantic search and dual LLM support (local HuggingFace + OpenAI).",
-        highlights: ["PDF chunking & ChromaDB vector store", "Gradio web UI + FastAPI REST endpoints", "2–3s response time after indexing"],
+        desc: "Production-oriented RAG document intelligence and approval-gated personal assistant for source-grounded PDF Q&A, drafting, and controlled workspace access.",
+        highlights: ["Persistent retrieval with source/page/chunk citations", "FastAPI + Gradio interfaces with Docker deployment", "Human-in-the-loop action and folder-access approvals"],
         tech: ["LangChain", "ChromaDB", "Gradio", "FastAPI", "Transformers"],
         links: {
           github: "https://github.com/UmerSajid842/rag-qa-system",
           gradio: "https://github.com/UmerSajid842/rag-qa-system#-quick-start"
+        }
+      },
+      {
+        title: "AI Meeting Assistant",
+        category: "nlp ml",
+        catLabel: "Meeting Intelligence",
+        icon: "fa-microphone",
+        desc: "Meeting-intelligence application that turns uploaded recordings into transcripts, summaries, decisions, action items, and key topics through FastAPI and Streamlit.",
+        highlights: ["Offline demo mode with explicit fallback labels", "Local Whisper transcription with Ollama-compatible summarization", "Upload validation, temporary-file cleanup, tests, and Docker Compose"],
+        tech: ["FastAPI", "Whisper", "Ollama", "Streamlit", "Docker"],
+        links: {
+          github: "https://github.com/UmerSajid842/ai-meeting-assistant"
+        }
+      },
+      {
+        title: "AI News Intelligence",
+        category: "nlp ml analytics",
+        catLabel: "AI Product",
+        icon: "fa-newspaper",
+        desc: "Full-stack news intelligence application that ingests articles, classifies topics, and presents searchable analytics through a FastAPI backend and Streamlit dashboard.",
+        highlights: ["FastAPI article and authentication endpoints", "Background news-ingestion workflow", "Topic classification with keyword and optional zero-shot fallback"],
+        tech: ["Python", "FastAPI", "Streamlit", "SQLAlchemy", "Docker"],
+        links: {
+          github: "https://github.com/UmerSajid842/AI-News-Intelligence"
         }
       },
       {
@@ -837,15 +861,15 @@
         }
       },
       {
-        title: "Heart Disease Prediction",
+        title: "Heart Disease ML Model Comparison",
         category: "ml analytics",
         catLabel: "Healthcare ML",
         icon: "fa-heartbeat",
-        desc: "Comparative ML study on UCI heart disease data with Logistic Regression achieving 90% accuracy, ROC-AUC 0.95, plus a Gradio prediction interface.",
-        highlights: ["6 models compared with full metrics", "Logistic Regression best performer", "Gradio web app for real-time screening"],
-        tech: ["Scikit-learn", "Gradio", "ROC/AUC", "UCI Dataset"],
+        desc: "Educational healthcare-ML comparison of Naive Bayes, Logistic Regression, and Decision Tree classifiers on the UCI Heart Disease dataset.",
+        highlights: ["Model ranking across accuracy, precision, recall, F1, and ROC-AUC", "Logistic Regression leads the committed result table", "Non-diagnostic Streamlit results explorer with responsible-use boundaries"],
+        tech: ["Scikit-learn", "Streamlit", "ROC/AUC", "UCI Dataset"],
         links: {
-          github: "https://github.com/UmerSajid842/Heart-Disease-Prediction",
+          github: "https://github.com/UmerSajid842/Heart-Disease-ML",
           kaggle: "https://www.kaggle.com/umersajid842"
         }
       },
@@ -907,7 +931,7 @@
         highlights: ["~95% training / ~90% validation accuracy", "MobileNetV2 pretrained encoder", "Sample-weighted loss for imbalance"],
         tech: ["TensorFlow", "U-Net", "MobileNetV2", "Keras"],
         links: {
-          github: "https://github.com/UmerSajid842/image-segmentation"
+          github: "https://github.com/UmerSajid842/Oxford-Pets-Segmentation"
         }
       },
       {
@@ -919,7 +943,7 @@
         highlights: ["97.2% accuracy with Euclidean K=1", "3 distance metrics compared", "Full confusion matrix analysis"],
         tech: ["Scikit-learn", "MNIST", "KNN", "Matplotlib"],
         links: {
-          github: "https://github.com/UmerSajid842/MNIST-DATASET",
+          github: "https://github.com/UmerSajid842/MNIST-Letter-Recognition",
           kaggle: "https://www.kaggle.com/umersajid842"
         }
       },
