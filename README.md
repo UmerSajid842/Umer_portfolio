@@ -1,24 +1,16 @@
 # Umer Sajid Portfolio
 
-Personal portfolio website for Umer Sajid, a software engineer and data-science practitioner focused on machine learning, NLP, deep learning, analytics, and end-to-end data products.
+This repository hosts the recruiter-facing portfolio for Umer Sajid. It deliberately presents four selected projects only, each with a public live demonstration. The static portfolio is deployed through Netlify; interactive demos are linked to their published application routes.
 
-## Contents
+## Deployment
 
-- `index.html` contains the portfolio layout, styling, project cards, skills, experience, and contact sections.
-- `Umerprofile.jpg` is the profile image used by the site.
-- `Config.yml` contains the repository configuration.
-- `LICENSE` contains the project license.
+Netlify publishes the repository root as a static site. The `netlify.toml` file declares the publish directory and keeps deep links routed to `index.html`.
 
-## Run locally
+## Selected live demos
 
-Because the site is a static HTML project, it can be opened directly or served through a local web server:
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` in a browser.
-
-## Portfolio maintenance
-
-Project cards should link to public repositories or live demos, describe the problem and result, and use verified technology names. Keep the portfolio project list synchronized with the strongest repositories in the GitHub account.
+| Project | Demo |
+| --- | --- |
+| RAG Document Intelligence Assistant | https://umershowcase-9jm3bans.manus.space/demos/rag |
+| AI Meeting Assistant | https://umershowcase-9jm3bans.manus.space/demos/meeting |
+| Space Weather Intelligence Dashboard | https://umershowcase-9jm3bans.manus.space/demos/space-weather |
+| NYC Taxi Visual Analytics | https://umershowcase-9jm3bans.manus.space/demos/nyc-taxi |
